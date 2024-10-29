@@ -15,13 +15,14 @@ function App() {
       element: <Mainlayout />,
       children: [
         { index: true, element: <AuthProvider component={Fashion1} /> },
-        { path: "/contact-us", element: <ContactUs /> },
-        { path: "/product/:id", element: <FetchSingleProduct /> },
-        { path: "/ShoppingCart", element: <ShoppingCart /> },
+        // Remove the leading slash for nested routes
+        { path: "contact-us", element: <ContactUs /> },
+        { path: "product/:id", element: <FetchSingleProduct /> },
+        { path: "ShoppingCart", element: <ShoppingCart /> },
       ],
     },
+    { path: "login", element: <Login /> }, // Remove leading slash
     { path: "*", element: <NotFound /> },
-    { path: "/login", element: <Login /> },
   ]);
 
   return <RouterProvider router={router} />;
