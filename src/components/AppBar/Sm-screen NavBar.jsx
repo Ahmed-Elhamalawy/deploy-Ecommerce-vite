@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CiSearch, CiShoppingCart } from "react-icons/ci";
+import { CiShoppingCart } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Accordion from "./Accordion";
 import Logoimg from "../../../src/images/logo_dark .png";
@@ -24,12 +24,11 @@ const SmScreenNavBar = () => {
 
   return (
     <nav className="lg:hidden w-full flex flex-col h-16 px-4 sm:px-4 z-30 relative">
-      <div className="flex flex-row px-10 justify-between w-full h-16 items-center">
-        <a href="#">
+      <div className="flex flex-row px-2  w-full h-16 items-center justify-between">
+        <a className="place-content-start" href="#">
           <img src={Logoimg} alt="" className="w-25 h-10" />
         </a>
         <div className="flex gap-3 relative">
-          <CiSearch className="text-2xl h-full" />
           <NavLink to={"/ShoppingCart"}>
             <CiShoppingCart className="text-xl h-full peer cursor-pointer" />
           </NavLink>
