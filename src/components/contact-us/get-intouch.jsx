@@ -37,12 +37,7 @@ const GetInTouch = () => {
             className="grid grid-cols-2 h-44 my-5 w-full border rounded-md outline-none"
           ></textarea>
           <div className="grid grid-cols-2 h-10">
-            <a
-              href=""
-              className="bg-red h-14  text-xl text-white	rounded flex items-center justify-center w-3/4"
-            >
-              Send Message
-            </a>
+            <button id="closing-btn">Send Message</button>
           </div>
         </form>
       </div>

@@ -12,7 +12,7 @@ const UpperAppBar = () => {
   const [currancyOpened, setCurrancyOpened] = useState(false);
   return (
     <div className=" flex flex-col w-full  h-12 items-center justify-between max-md:h-auto max-md:py-5  md:flex-row px-10 xl:px-24  ">
-      <div className="flex flex-row justify-center items-center gap-3 ">
+      <div className="flex flex-row justify-center items-center gap-3 text-sm ">
         <DropDown
           opened={languageOpened}
           setOpened={setLanguageOpened}

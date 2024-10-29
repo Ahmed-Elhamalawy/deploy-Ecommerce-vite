@@ -79,7 +79,7 @@ const FetchSingleProduct = () => {
   return (
     <div>
       {loading ? (
-        <span className=" absolute left-1/2 top-1/2">
+        <span className=" absolute left-1/2 -translate-x-1/2 top-1/2">
           <SyncLoader color="#ff324d" />
         </span>
       ) : (
@@ -95,7 +95,7 @@ const FetchSingleProduct = () => {
               />
             </div>
 
-            <section className="grid grid-cols-1 lg:grid-cols-2 sm:mx-10 lg:mx-24 gap-10 ">
+            <section className="grid grid-cols-1 lg:grid-cols-2 sm:mx-10 lg:mx-24 gap-10 max-md:px-10">
               <div className=" max-h-[528px] border-light border-opacity-50 border ">
                 <div className=" h-[500px] relative bg-white m-2 w-auto flex items-center justify-center">
                   <div className="h-full absolute top-0 left-0 bottom-0  w-full  bg-black opacity-5  "></div>
@@ -142,7 +142,7 @@ const FetchSingleProduct = () => {
                   <button onClick={decreamentHandler} disabled={counter === 1}>
                     <AiOutlineMinus className=" size-10 p-3 bg-black bg-opacity-20 rounded-full hover:bg-light" />
                   </button>
-                  <div className="border border-black border-opacity-40 w-16 h-12 text-center text-3xl">
+                  <div className="w-16 h-12 text-center text-3xl">
                     {counter}
                   </div>
                   <button onClick={increamentHandler}>

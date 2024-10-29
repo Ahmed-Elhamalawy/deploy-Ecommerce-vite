@@ -1,97 +1,27 @@
 import { NavLink } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Accordion = () => {
+const Accordion = ({ isOpen }) => {
   return (
-    <div className="join join-vertical w-full ">
-      <div className="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <NavLink to={"/"} className="collapse-title text-sm  font-medium">
-          HOME
-        </NavLink>
-        <div className="collapse-content flex flex-col gap-1">
-          <NavLink to={"/"}>Fashion 1</NavLink>
-          <p>Fashion 2</p>
-          <p>Furniture 1</p>
-          <p>Furniture 2</p>
-          <p>Electronics 1</p>
-          <p>Electronics 1</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div className="collapse-title text-sm  font-medium">PAGES</div>
-        <div className="collapse-content">
-          <p>About us</p>
-          <NavLink to={"/contact-us"}> Contact us</NavLink>
-          <p>Faq</p>
-          <p>404 Error page</p>
-          <p> Login</p>
-          <p> Register</p>
-          <p>Terms and Conditions</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div className="collapse-title text-sm  font-medium">PRODUCTS</div>
-        <div className="collapse-content">
-          <p className="font-bold py-2">WOMANS</p>
-          <p className="py-1">Vestibulum Sed</p>
-          <p className="py-1">Donec Porttitor</p>
-          <p className="py-1">Donec Vitae Facilisis</p>
-          <p className="py-1">Curabitur Tempus</p>
-          <p className="py-1">Vivamus In Tortor</p>
-          <p className="font-bold py-2">MEN</p>
-          <p className="py-1">Vestibulum Sed</p>
-          <p className="py-1">Donec Porttitor</p>
-          <p className="py-1">Donec Vitae Facilisis</p>
-          <p className="py-1">Curabitur Tempus</p>
-          <p className="py-1">Vivamus In Tortor</p>
-          <p className="font-bold py-2">KIDS</p>
-          <p className="py-1">Vestibulum Sed</p>
-          <p className="py-1">Donec Porttitor</p>
-          <p className="py-1">Donec Vitae Facilisis</p>
-          <p className="py-1">Curabitur Tempus</p>
-          <p className="py-1">Vivamus In Tortor</p>
-          <p className="font-bold py-2">ACCESSORIES</p>
-          <p className="py-1">Vestibulum Sed</p>
-          <p className="py-1">Donec Porttitor</p>
-          <p className="py-1">Donec Vitae Facilisis</p>
-          <p className="py-1">Curabitur Tempus</p>
-          <p className="py-1">Vivamus In Tortor</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div className="collapse-title text-sm  font-medium">BLOG</div>
-        <div className="collapse-content">
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-        </div>
-      </div>
-
-      <div className="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div className="collapse-title text-sm  font-medium">SHOP</div>
-        <div className="collapse-content">
-          <p className="py-1">SHOP PAGE LAYOUT</p>
-          <p className="py-1">Shop List View</p>
-          <p className="py-1">Shop List Left Sidebar</p>
-          <p className="py-1">Shop List Right Sidebar</p>
-          <p className="py-1">Left Sidebar</p>
-          <p className="py-1">Right Sidebar</p>
-          <p className="py-1">Shop Load More</p>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow join-item ">
-        <NavLink to={"/contact-us"} className="pl-3 text-sm font-medium mb-2 ">
-          CONTACT US
-        </NavLink>
-      </div>
-    </div>
+    <AnimatePresence mode="wait">
+      {isOpen && ( // Render only when isOpen is true
+        <motion.div
+          key="accordion" // Ensure a unique key for the animated component
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.3 }}
+          className="bg-[#ffffff] text-[#2d3436] font-semibold rounded-3xl flex flex-col justify-center items-center gap-3 p-5 w-full"
+        >
+          <NavLink to={"/"}>HOME</NavLink>
+          <div>PAGES</div>
+          <div>PRODUCTS</div>
+          <div>BLOG</div>
+          <div>SHOP</div>
+          <NavLink to={"/contact-us"}>CONTACT US</NavLink>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
