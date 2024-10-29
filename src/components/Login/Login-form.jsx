@@ -11,10 +11,6 @@ const LoginForm = () => {
       .string()
       .required("required")
       .min(8, "this should be more than 8 chars"),
-    // .matches(
-    //   "^(?=.*[A-Z])(?:[a-zA-Z]+?d+[a-zA-Z]+?)+$",
-    //   "at least 1 uppercase and 1 number "
-    // ),
   });
 
   const { handleSubmit, register, formState } = useForm({
@@ -34,6 +30,7 @@ const LoginForm = () => {
           type="text"
           autoComplete="off"
           id="first_name"
+          value={"Test@example.com"}
           className="  text-sm rounded-lg  block w-full p-2.5 h-9  placeholder:text-light placeholder:font-bold "
           placeholder="Email"
         />
@@ -48,6 +45,7 @@ const LoginForm = () => {
           type="password"
           id="password"
           placeholder="Password"
+          value={"12345678"}
           className="text-sm rounded-lg  block w-full p-2.5 h-9 placeholder:text-light placeholder:font-bold "
         />
         <p className=" text-red text-start">

@@ -21,7 +21,7 @@ const Login = () => {
   return (
     <section className="w-full h-screen relative">
       {loading ? (
-        <span className=" absolute left-1/2 top-1/2">
+        <span className="absolute left-1/2 -translate-x-1/2 top-1/2">
           <SyncLoader color="#ff324d" />
         </span>
       ) : (
